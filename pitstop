@@ -13,3 +13,23 @@ void pitStop()
     floorFinished(elevio_floorSensor());
     decideDirection();
 };
+
+
+    while (true) { 
+
+        for (int i = 0; i < 50; i++) {
+            nanosleep(&(struct timespec){0, 20 * 1000 * 100}, NULL); 
+            updateHighCommandLists();
+            updateLights();
+
+            if (elevio_obstruction() == 1) {
+               
+                break;
+            };
+        };
+
+        if (elevio_obstruction() != 1) {
+            
+            break;
+        };
+    };

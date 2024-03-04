@@ -46,4 +46,18 @@ int GetBottomDestination(){
          }
       }
    return Bottom;
+
+};
+
+
+
+
+void checkForStop(){
+   for (int i = 0; i < N_FLOORS; i++)
+   {
+      if ((cabList[i] || (upList[i] & (getDirection() == GOIN_UP)) || (downList[i] & (getDirection() == GOIN_DOWN))) == elevio_floorSensor())
+      {
+         pitStop();
+      }
+   }
 };

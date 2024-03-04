@@ -1,0 +1,9 @@
+void UpDateLights(){
+
+   for (int i = 0; i < N_FLOORS -1; i++)
+   {
+      elevio_buttonLamp(i, BUTTON_CAB, cabList[i]);
+      elevio_buttonLamp(i, BUTTON_HALL_DOWN, cabList[i]);
+      elevio_buttonLamp(i, BUTTON_HALL_UP, cabList[i]);
+   }
+};

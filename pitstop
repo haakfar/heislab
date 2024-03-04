@@ -1,0 +1,15 @@
+void pitStop()
+{
+    elevio_motorDirection(DIRN_STOP);
+    elevio_doorOpenLamp(1);
+    nanosleep(&(struct timespec){3, 0}, NULL);
+    
+
+    while ((elevio_stopButton() == 1) || (elevio_obstruction() == 1))
+    {
+        nanosleep(&(struct timespec){3, 0}, NULL);
+    };
+
+    floorFinished(elevio_floorSensor());
+    decideDirection();
+};

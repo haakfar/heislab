@@ -33,3 +33,19 @@ void pitStop()
             break;
         };
     };
+
+
+
+
+
+
+
+    while(elevio_stopButton() == 1){
+        floorFinished(0);
+        floorFinished(1);
+        floorFinished(2);
+        floorFinished(3);
+        nanosleep(&(struct timespec){3, 0}, NULL);
+        elevio_stopLamp(1);
+    };
+    elevio_stopLamp(0);

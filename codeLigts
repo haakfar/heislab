@@ -14,3 +14,36 @@ void FloorFinished(int floor){
    setDownList(floor, 0);
    setCabList(floor, 0);
 };
+
+
+
+int GetTopDestination(){
+   int Top = 0;
+   for (int i = 0; i < N_FLOORS; i++)
+   {
+      if ((downList[i] || upList[i] || cabList[i]) == 1)
+      {
+         if (i > Top)
+         {
+            Top = i;
+         }
+      }
+   }
+   return Top;
+};
+
+
+int GetBottomDestination(){
+   int Bottom = 3;
+      for (int i = 0; i < N_FLOORS; i++)
+      {
+         if ((downList[i] || upList[i] || cabList[i]) == 1)
+         {
+            if (i < Bottom)
+            {
+               Bottom = i;
+            }
+         }
+      }
+   return Bottom;
+};

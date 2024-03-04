@@ -7,3 +7,10 @@ void UpDateLights(){
       elevio_buttonLamp(i, BUTTON_HALL_UP, cabList[i]);
    }
 };
+
+
+void FloorFinished(int floor){
+   setUpList(floor, 0);
+   setDownList(floor, 0);
+   setCabList(floor, 0);
+};
